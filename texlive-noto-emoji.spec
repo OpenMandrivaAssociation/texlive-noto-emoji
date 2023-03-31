@@ -1,6 +1,6 @@
 Name:		texlive-noto-emoji
 Version:	62950
-Release:	1
+Release:	2
 Summary:	Noto Emoji fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/noto-emoji
