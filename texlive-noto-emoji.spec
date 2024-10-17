@@ -3,7 +3,7 @@ Version:	62950
 Release:	2
 Summary:	Noto Emoji fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/noto-emoji
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/noto-emoji
 License:	ofl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/noto-emoji.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/noto-emoji.doc.r%{version}.tar.xz
