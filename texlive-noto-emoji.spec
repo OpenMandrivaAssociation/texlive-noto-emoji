@@ -1,36 +1,21 @@
-Name:		texlive-noto-emoji
-Version:	62950
-Release:	2
+%global tl_name noto-emoji
+%global tl_revision 62950
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.034
+Release:	%{tl_revision}.1
 Summary:	Noto Emoji fonts
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/noto-emoji
+URL:		https://www.ctan.org/tex-archive/fonts/noto-emoji
 License:	ofl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/noto-emoji.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/noto-emoji.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/noto-emoji.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/noto-emoji.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Noto Color Emoji supports all emoji defined in the latest
-Unicode version.
+Noto Color Emoji supports all emoji defined in the latest Unicode
+version.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/fonts/truetype/google/noto-emoji
-%doc %{_texmfdistdir}/doc/fonts/noto-emoji
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
